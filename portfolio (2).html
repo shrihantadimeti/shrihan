@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Shrihan Tadimeti</title>
+  <meta name="description" content="Sports photography portfolio by Shrihan Tadimeti — soccer, lacrosse, baseball." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+:root{--black:#0a0a0a;--white:#fafaf8;--gold:#c9a84c;--gold-lt:#e8c97a;--dim:#6b6560;--line:rgba(255,255,255,0.10);--line-lt:rgba(0,0,0,0.09);--ease:cubic-bezier(0.25,0.46,0.45,0.94)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:#f5f4f1;color:var(--black);font-family:'Inter','Helvetica Neue',Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.display{font-family:'Barlow Condensed','Impact','Arial Narrow',sans-serif;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;line-height:0.88}
+.label{font-size:0.625rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold)}
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,5vw,64px);transition:background 0.4s var(--ease)}
+.site-header.scrolled{background:rgba(245,244,241,0.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line-lt)}
+.logo{font-family:'Barlow Condensed','Impact',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--black)}
+.logo span{color:var(--gold)}
+.site-nav{display:flex;align-items:center;gap:36px}
+.site-nav a{font-size:0.625rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--black);opacity:0.4;transition:opacity 0.2s}
+.site-nav a:hover,.site-nav a.active{opacity:1}
+.nav-cta{padding:10px 22px;border:1px solid var(--black);color:var(--black)!important;opacity:1!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--black);color:#f5f4f1!important}
+.hamburger{display:none;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:1px solid var(--line-lt);cursor:pointer}
+.hamburger span{display:block;width:18px;height:1px;background:var(--black);transition:transform 0.3s,opacity 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:99;background:rgba(245,244,241,0.98);flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:'Barlow Condensed','Impact',sans-serif;font-size:clamp(2.5rem,8vw,4rem);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--black);opacity:0.5;transition:opacity 0.2s,color 0.2s}
+.mobile-nav a:hover{opacity:1;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 32px;font-size:0.625rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;transition:all 0.2s var(--ease);white-space:nowrap}
+.portfolio-hero{position:relative;height:75vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--black)}
+.portfolio-hero-bg{position:absolute;inset:0}
+.portfolio-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(0.75);transform:scale(1.06);transition:transform 10s var(--ease)}
+.portfolio-hero.loaded .portfolio-hero-bg img{transform:scale(1.0)}
+.portfolio-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.2) 0%,rgba(10,10,10,0.6) 100%)}
+.portfolio-hero-content{position:relative;z-index:2;padding:0 clamp(20px,5vw,64px) clamp(44px,6vw,72px);width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
+.portfolio-hero-content h1{font-size:clamp(5rem,12vw,11rem);color:var(--white);line-height:0.85}
+.portfolio-hero-meta{text-align:right;padding-bottom:10px;color:rgba(250,250,248,0.6)}
+.portfolio-hero-meta p{font-size:0.8rem;line-height:1.6;font-weight:300}
+.filter-bar{position:sticky;top:64px;z-index:10;display:flex;align-items:center;background:#f5f4f1;border-bottom:1px solid var(--line-lt);padding:0 clamp(20px,5vw,64px);overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-btn{flex-shrink:0;padding:18px 24px;background:none;border:none;border-bottom:2px solid transparent;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.4);cursor:pointer;transition:all 0.2s;margin-bottom:-1px}
+.filter-btn:hover{color:var(--black)}
+.filter-btn.active{color:var(--black);border-bottom-color:var(--gold)}
+.portfolio-section{padding:2px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.portfolio-item{position:relative;aspect-ratio:2/3;overflow:hidden;background:#d8d5d0;cursor:pointer}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;filter:saturate(0.88) contrast(1.04);transition:transform 0.7s var(--ease),filter 0.4s var(--ease),opacity 0.3s}
+.portfolio-item:hover img{transform:scale(1.06);filter:saturate(1) contrast(1.08)}
+.portfolio-item-overlay{position:absolute;inset:0;background:rgba(10,10,10,0.55);display:flex;align-items:flex-end;padding:20px;opacity:0;transition:opacity 0.3s}
+.portfolio-item:hover .portfolio-item-overlay{opacity:1}
+.portfolio-item-label{font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--white)}
+.portfolio-item.hidden{display:none}
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,10,10,0.95);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-inner img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:var(--white);font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;opacity:0.6;transition:opacity 0.2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--white);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;font-size:1.2rem}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.18)}
+.lightbox-prev{left:-56px}
+.lightbox-next{right:-56px}
+.lightbox-caption{position:absolute;bottom:-32px;left:0;right:0;text-align:center;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.contact-section{padding:clamp(64px,10vw,120px) clamp(24px,5vw,64px);border-top:1px solid var(--line-lt);background:#f5f4f1}
+.contact-inner{max-width:900px;margin:0 auto}
+.contact-section .label{margin-bottom:16px}
+.contact-heading-text{font-size:clamp(2.8rem,5vw,5rem);margin-bottom:12px;color:var(--black)}
+.contact-sub{font-size:0.9rem;font-weight:300;line-height:1.7;color:rgba(10,10,10,0.5);margin-bottom:48px;max-width:500px}
+.contact-form{display:grid;gap:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.4)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 0;background:none;border:0;border-bottom:1px solid rgba(10,10,10,0.15);border-radius:0;font-size:0.9rem;font-weight:300;color:var(--black);outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:var(--black)}
+.form-group textarea{min-height:120px;resize:vertical}
+.btn-dark{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 32px;font-size:0.625rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;background:var(--black);color:var(--white);border:1px solid var(--black);cursor:pointer;transition:background 0.2s}
+.btn-dark:hover{background:#222}
+.form-success{font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;min-height:20px}
+.site-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:24px clamp(20px,5vw,64px);border-top:1px solid var(--line-lt);background:#f5f4f1}
+.footer-logo{font-family:'Barlow Condensed','Impact',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase}
+.footer-logo span{color:var(--gold)}
+.site-footer a{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;opacity:0.4;transition:opacity 0.2s}
+.site-footer a:hover{opacity:1}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+@media(max-width:900px){
+  .site-nav{display:none}
+  .hamburger{display:flex}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-hero-content{flex-direction:column;align-items:flex-start}
+  .portfolio-hero-meta{text-align:left}
+  .form-row{grid-template-columns:1fr;gap:24px}
+  .lightbox-prev{left:-40px}
+  .lightbox-next{right:-40px}
+}
+@media(max-width:560px){
+  .portfolio-grid{grid-template-columns:1fr 1fr}
+  .lightbox-prev{left:8px;top:auto;bottom:-52px;transform:none}
+  .lightbox-next{right:8px;top:auto;bottom:-52px;transform:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <a class="logo" href="index.html">Shrihan<span>.</span></a>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="#contact" class="nav-cta btn">Book a shoot</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="portfolio-hero" id="portfolio-hero">
+      <div class="portfolio-hero-bg">
+        <img src="portfolio-hero.jpg" alt="Sports photography hero" />
+      </div>
+      <div class="portfolio-hero-overlay"></div>
+      <div class="portfolio-hero-content">
+        <h1 class="display">Portfolio</h1>
+
+      </div>
+    </section>
+
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="soccer">Soccer</button>
+      <button class="filter-btn" data-filter="lacrosse">Lacrosse</button>
+      <button class="filter-btn" data-filter="baseball">Baseball</button>
+    </div>
+
+    <section class="portfolio-section" id="gallery">
+      <div class="portfolio-grid" id="portfolio-grid">
+        <article class="portfolio-item" data-sport="soccer" data-caption="Soccer · Shrewsbury Colonials">
+          <img src="DSC_8241.jpeg" alt="Soccer player controlling the ball in a red and white kit" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Soccer</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="soccer" data-caption="Soccer · Fall Season">
+          <img src="DSC_6508.jpeg" alt="Soccer player walking near the sideline in fall colors" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Soccer</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="soccer" data-caption="Soccer · White Kit">
+          <img src="DSC_7329.jpeg" alt="Soccer player in white moving with the ball" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Soccer</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="soccer" data-caption="Soccer · Dribble">
+          <img src="DSC_4423.jpeg" alt="Soccer player dribbling on grass" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Soccer</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="lacrosse" data-caption="Lacrosse · #44 Colonials">
+          <img src="DSC_0479.jpeg" alt="Lacrosse player wearing number 44 from behind" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Lacrosse</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="lacrosse" data-caption="Lacrosse · Faceoff">
+          <img src="DSC_0248.jpeg" alt="Lacrosse faceoff during a game" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Lacrosse</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="lacrosse" data-caption="Lacrosse · Team Huddle">
+          <img src="DSC_3589.jpeg" alt="Lacrosse team huddle on the field" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Lacrosse</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="lacrosse" data-caption="Lacrosse · Scoreboard Run">
+          <img src="DSC_0827.jpeg" alt="Lacrosse player carrying the ball near the scoreboard" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Lacrosse</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="baseball" data-caption="Baseball · At Bat">
+          <img src="DSC_5578.jpeg" alt="Baseball player waiting at bat" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Baseball</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="baseball" data-caption="Baseball · Field">
+          <img src="DSC_5741.jpeg" alt="Baseball player standing on the field" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Baseball</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="baseball" data-caption="Baseball · Pitcher">
+          <img src="DSC_9518.jpeg" alt="Baseball pitcher mid-throw" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Baseball</span></div>
+        </article>
+        <article class="portfolio-item" data-sport="baseball" data-caption="Baseball · Portrait">
+          <img src="DSC_9080.jpeg" alt="Black and white baseball portrait from behind" loading="lazy" />
+          <div class="portfolio-item-overlay"><span class="portfolio-item-label">Baseball</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <p class="label reveal">Contact</p>
+        <h2 class="display contact-heading-text reveal reveal-delay-1">Let's work.</h2>
+        <p class="contact-sub reveal reveal-delay-2">Send the basics for a game, tournament, media day, or athlete portrait session and I'll get back to you within 24 hours.</p>
+        <form class="contact-form reveal reveal-delay-3" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="session">Which Sport?</label>
+              <select id="session" name="session">
+                <option>Sport</option>
+                <option>Soccer</option>
+                <option>Basketball</option>
+                <option>Football</option>
+                <option>Lacrosse</option>
+                  <option>Baseball</option>
+                  <option>Tennis</option>
+                  <option>Golf</option>
+                  <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Sport, location, time, team, and what you need delivered."></textarea>
+          </div>
+          <button type="submit" class="btn-dark">Send inquiry</button>
+          <p class="form-success" id="form-success" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">Shrihan<span>.</span></span>
+    <a href="mailto:tadimetishrihan@gmail.com">tadimetishrihan@gmail.com</a>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close">Close ✕</button>
+      <img src="" alt="" id="lightbox-img" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8592;</button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+
+  <script>
+const header=document.getElementById('site-header');
+if(header){const s=()=>header.classList.toggle('scrolled',window.scrollY>40);window.addEventListener('scroll',s,{passive:true});s();}
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobile-nav');
+if(hamburger&&mobileNav){hamburger.addEventListener('click',()=>{const o=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',o);hamburger.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});mobileNav.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mobileNav.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}));}
+const revealEls=document.querySelectorAll('.reveal');
+if(revealEls.length){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.12});revealEls.forEach(el=>obs.observe(el));}
+const portfolioHero=document.getElementById('portfolio-hero');
+if(portfolioHero){const hi=portfolioHero.querySelector('img');const act=()=>portfolioHero.classList.add('loaded');if(hi){if(hi.complete)act();else hi.addEventListener('load',act);}}
+const filterBtns=document.querySelectorAll('.filter-btn');
+const portfolioItems=document.querySelectorAll('.portfolio-item');
+if(filterBtns.length&&portfolioItems.length){filterBtns.forEach(btn=>{btn.addEventListener('click',()=>{filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;portfolioItems.forEach(item=>{item.classList.toggle('hidden',f!=='all'&&item.dataset.sport!==f);});});});}
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+const lightboxCap=document.getElementById('lightbox-caption');
+const lightboxClose=document.getElementById('lightbox-close');
+const lightboxPrev=document.getElementById('lightbox-prev');
+const lightboxNext=document.getElementById('lightbox-next');
+let currentIndex=0;let visibleItems=[];
+function getVisible(){return Array.from(portfolioItems).filter(i=>!i.classList.contains('hidden'));}
+function showImg(idx){const item=visibleItems[idx];if(!item)return;const img=item.querySelector('img');lightboxImg.src=img.src;lightboxImg.alt=img.alt;lightboxCap.textContent=item.dataset.caption||'';lightboxPrev.style.visibility=idx>0?'visible':'hidden';lightboxNext.style.visibility=idx<visibleItems.length-1?'visible':'hidden';}
+function openLB(idx){visibleItems=getVisible();currentIndex=idx;showImg(currentIndex);lightbox.classList.add('open');document.body.style.overflow='hidden';lightboxClose.focus();}
+function closeLB(){lightbox.classList.remove('open');document.body.style.overflow='';}
+if(lightbox){portfolioItems.forEach(item=>{item.addEventListener('click',()=>{visibleItems=getVisible();const vi=visibleItems.indexOf(item);if(vi!==-1)openLB(vi);});});lightboxClose.addEventListener('click',closeLB);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLB();});lightboxPrev.addEventListener('click',()=>{if(currentIndex>0)showImg(--currentIndex);});lightboxNext.addEventListener('click',()=>{if(currentIndex<visibleItems.length-1)showImg(++currentIndex);});document.addEventListener('keydown',e=>{if(!lightbox.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'&&currentIndex>0)showImg(--currentIndex);if(e.key==='ArrowRight'&&currentIndex<visibleItems.length-1)showImg(++currentIndex);});}
+const contactForm=document.getElementById('contact-form');
+const formSuccess=document.getElementById('form-success');
+if(contactForm&&formSuccess){contactForm.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(contactForm);const name=(data.get('name')||'there').toString().trim();formSuccess.textContent=`Thanks, ${name}. I'll be in touch within 24 hours.`;contactForm.reset();});}
+document.querySelectorAll('img').forEach(image=>{const src=image.getAttribute('src')||'';const clean=src.replace(/^\.?\//,'');const noExt=clean.replace(/\.(jpe?g|png|webp)$/i,'');const ext=(clean.match(/\.(jpe?g|png|webp)$/i)||[''])[0];const altExt=ext.toLowerCase()==='.jpeg'?'.jpg':'.jpeg';const candidates=[clean,'./'+clean,'assets/'+clean,noExt+altExt,'assets/'+noExt+altExt].filter(Boolean);let idx=0;image.dataset.fbIdx='0';image.addEventListener('error',()=>{idx=Number(image.dataset.fbIdx||0)+1;if(idx<candidates.length){image.dataset.fbIdx=String(idx);image.src=candidates[idx];}});});
+  </script>
+</body>
+</html>
